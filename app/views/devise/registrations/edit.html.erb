@@ -1,0 +1,51 @@
+<h2 class="title">Edit <%= resource_name.to_s.humanize %></h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+
+  <div class="field">
+    <%= f.label :name, class: "form-headings" %><br />
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email, class: "form-headings" %><br />
+    <%= f.email_field :email, autocomplete: "email" %>
+  </div>
+  <div class="field">
+    <%= f.label :usertype, class: "form-headings" %><br />
+    <%= f.select :usertype, [ 'Manager', 'Developer', 'QA' ], :prompt => 'Select Role' %>
+  </div>
+
+  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :new_password, class: "form-headings" %> <br />
+    <%= f.password_field :password, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :confirm_password, class: "form-headings" %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :current_password, class: "form-headings" %> <br />
+    <%= f.password_field :current_password, autocomplete: "current-password" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Update", class: "submit-btn" %>
+  </div>
+<% end %>
+
+<div class="cancel-account">
+<h3 class="main-heading cancel-account">Cancel my account?</h3>
+
+<%= button_to "Cancel", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, class: "submit-btn cancel-acc" %>
+</div>
+<div class="extra-buttons">
+<%= link_to "Back", :back, class: "extra-links" %>
+</div>

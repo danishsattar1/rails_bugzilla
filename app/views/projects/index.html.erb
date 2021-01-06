@@ -1,0 +1,25 @@
+<div class="projects">
+  <h1 class="title">Hi, <%= current_user.name if current_user%></h1>
+  <div class="every-buttons">
+    <% if can? :new, Project%>
+      <%= link_to "Create New Project",new_project_path, class: 'buttons-links add' %>
+    <% end %>
+  </div>  
+  <h2 class="main-heading">Projects</h2>
+  <div class="project-holder">
+    <% @projects.each do |project| %>
+      <div class="project-details">
+          <div class="project-title">Title: <span><%= project.title%></span> </div>
+          <div class="project-description">Description: <span><%= project.description %></span></div>
+          <div class="every-buttons">
+          <%= link_to "View", project_path(project), class: 'buttons-links view'%>
+          <% if can? :manage, Project%>
+            <%= link_to "Edit", edit_project_path(project), class: 'buttons-links edit'%>
+            <%= link_to "Remove", project_path(project), method: :delete, data: { confirm: 'Are you sure?' }, class: 'buttons-links delete'%>
+          <% end %>
+          <%= link_to "Manage Bugs", project_bugs_path(project), class: 'buttons-links' %>
+          </div>
+      </div>
+    <% end %>
+  </div>
+</div>

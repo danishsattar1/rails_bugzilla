@@ -1,0 +1,38 @@
+<div class="bugs">
+  <h1 class="title"><%= @project.title%></h1>
+  <div class="extra-buttons">
+    <%= link_to "Back", projects_path, class: "extra-links" %>
+  </div>
+  <div class="every-buttons">
+    <% if can? :new, Bug%>
+      <%= link_to "Add New Bug",new_project_bug_path, class: 'buttons-links add' %>
+    <% end %>
+  </div>
+  <table class="table-data">
+    <tr class="table-row">
+      <th class="table-row-heading">Title</th>
+      <th class="table-row-heading">Description</th>
+      <th class="table-row-heading">Deadline</th>
+      <th class="table-row-heading">Type</th>
+      <th class="table-row-heading">Posted By</th>
+      <th class="table-row-heading">Assigned To</th>
+      <th class="table-row-heading">Status</th>
+    </tr>
+    <% @bugs.each do |bug| %>
+      <tr class="table-row">
+        <td class="table-row-details"><%= bug.title %></td>
+        <td class="table-row-details"><%= bug.description %></td>
+        <td class="table-row-details"><%= bug.deadline.to_date %></td>
+        <td class="table-row-details"><%= bug.bugtype %></td>
+        <td class="table-row-details"><%= bug.creator.name %></td>
+        <td class="table-row-details"><%= bug.developer.name %></td>
+        <td class="table-row-details"><%= bug.status %></td>
+        <td class="every-buttons"><%= link_to "View", project_bug_path(@project, bug),class: 'buttons-links view'%>
+        <% if can? :manage, Bug%>
+        <%= link_to "Edit",  edit_project_bug_path(@project, bug), class: 'buttons-links edit'%>
+        <%= link_to "Remove", project_bug_path(@project, bug), method: :delete, data: { confirm: 'Are you sure?'}, class: 'buttons-links delete' %></td>
+        <% end %>
+      </tr>
+    <% end %>
+  </table>
+</div>

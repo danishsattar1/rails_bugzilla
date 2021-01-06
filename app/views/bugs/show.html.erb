@@ -1,0 +1,58 @@
+<div class="bugs">
+  <div class="title">
+    <%= @bug.title %>
+  </div>
+  <div class="extra-buttons">
+    <%= link_to "Back", project_bugs_path(@project), class: "extra-links" %>
+  </div>
+  <table class="table-data">
+    <tr class="table-row">
+      <td class="table-row-details row-heading"> Project </td>
+      <td class="table-row-details"> <%= @project.title %> </td>
+    </tr>
+    <tr class="table-row">
+      <td class="table-row-details row-heading"> Deadline </td>
+      <td class="table-row-details"> <%= @bug.deadline.to_date %> </td>
+    </tr>
+    <tr class="table-row">
+      <td class="table-row-details row-heading"> Description </td>
+      <td class="table-row-details"> <%= @bug.description %> </td>
+    </tr>
+    <tr class="table-row">
+      <td class="table-row-details row-heading"> Type </td>
+      <td class="table-row-details"> <%= @bug.bugtype %> </td>
+    </tr>
+    <tr class="table-row">
+      <td class="table-row-details row-heading"> Status </td>
+      <td class="table-row-details"> <%= @bug.status %> </td>
+    </tr>
+    <tr class="table-row">
+      <td class="table-row-details row-heading"> Created By: </td>
+      <td class="table-row-details"> <%= @bug.creator.name %> </td>
+    </tr>
+    <tr class="table-row">
+      <td class="table-row-details row-heading"> Assigned To: </td>
+      <td class="table-row-details"> <%= @bug.developer.name %> </td>
+    </tr>
+    <tr class="table-row">
+      <td class="table-row-details row-heading"> Update Status: </td>
+      <td class="table-row-details"> 
+        <%= form_for [@project, @bug],  url: change_status_project_bug_path do |s| %>
+          <div class="field">
+            <% if @bug.bug? %>
+            <%= s.select :status, [ 'New', 'Started', 'Resolved' ], selected: @bug.status, class: "status-update"%>
+            <% elsif @bug.feature? %>
+            <%= s.select :status, [ 'New', 'Started', 'Completed' ], selected: @bug.status, class: "status-update"%>
+            <% end%>
+          </div> 
+          <div class="every-buttons">
+            <%= s.submit "Update", class: "buttons-links add-btn"%>
+          </div>
+        <% end %> 
+      </td>
+    </tr>
+  </table>
+  <% unless @bug.screenshot_url.nil? %>
+    <%= image_tag @bug.screenshot_url.to_s unless @bug.screenshot.nil?%> 
+  <% end %>
+</div>

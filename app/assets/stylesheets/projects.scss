@@ -1,0 +1,78 @@
+.projects {
+	.form-headings {
+		max-width: 90px;
+	}
+	.project-show {
+		flex-direction: row;
+		.extra-links {
+			margin: 0 10px;
+		}
+	}
+	.project-holder	{
+		display: flex;
+		flex-wrap: wrap;
+		.project-details {
+			flex-basis: 33%;
+			display: flex;
+		    align-items: center;
+		    justify-content: center;
+		    flex-direction: column;
+		    margin-bottom: 30px;
+		    &.show-page {
+		    	flex-basis: 100%;
+		    }
+			.project-title,
+			.project-description {
+				margin-bottom: 10px;
+				font-size: 16px;
+				font-weight: normal;
+				span {
+					font-weight: 18px;
+					font-weight: 600;
+				}
+			}
+			.project-description {
+				margin-bottom: 15px;
+				span {
+					font-style: italic;
+				}
+			}
+			.every-buttons {
+				justify-content: space-between;
+				flex-wrap: wrap;
+				width: 100%;
+				max-width: 350px;
+				.buttons-links {
+					flex-basis: 49%;
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+
+
+	#new_user_project {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		max-width: 400px;
+		margin: 0 auto;
+		.field {
+			margin: 0;
+			#user_project_user_id {
+				background: transparent;
+				width: 100%;
+				margin-right: 15px;
+				height: 30px;
+			}
+		}
+		.every-buttons {
+			.buttons-links {
+				min-width: 140px;
+			}
+		}
+	}
+	.table-data {
+		max-width: 500px;
+	}
+}

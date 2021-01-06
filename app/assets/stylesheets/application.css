@@ -1,0 +1,197 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+body {
+	font-family: 'Open Sans', sans-serif;
+}
+
+.title {
+	font-weight: 700;
+	text-align: center;
+	font-size: 40px;
+}
+
+.main-heading {
+	font-weight: 600;
+	text-align: center;
+	font-size: 30px;
+}
+
+.main-heading.cancel-account {
+	
+	font-size: 20px;
+	margin-right: 10px;
+}
+
+#new_user, #edit_user {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.field {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-bottom: 10px;
+	width: 100%;
+}
+
+.form-headings {
+	font-weight: 400;
+	font-size: 16px;
+	margin-right: 10px;
+	width: 100%;
+	max-width: 75px;
+}
+.actions {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	margin: 10px 0 20px;
+}
+.submit-btn {
+	background: black;
+	color: #fff;
+	border: 1px solid #000;
+	height: 30px;
+	max-width: 100px;
+	width: 100%;
+	cursor: pointer;
+	font-weight: 600;
+}
+
+.submit-btn.reset {
+	max-width: 260px;
+}
+
+.submit-btn.cancel-acc {
+	background: #dc3545;
+	border: 1px solid #dc3545;
+}
+.extra-buttons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+}
+.extra-buttons.nav-buttons {
+
+	justify-content: flex-end;
+	flex-direction: row;
+}
+.extra-links {
+	font-weight: 600;
+	color: #000;
+	margin: 0 0px 10px;
+}
+
+.extra-links.nav-links {
+	
+	margin: 0 10px;
+}
+
+#user_usertype {
+	max-width: 181px;
+	width: 100%;
+	background: transparent;
+}
+
+.notice,.alert, #error_explanation, #error_explanation h2 {
+	font-weight: 600;
+	text-align: center;
+	font-size: 22px;
+}
+
+.notice {
+	color: #4bb543;
+}
+.alert, #error_explanation {
+	color: #ff0000;
+}
+#error_explanation ul li {
+	list-style-type: none;
+	
+	font-weight: 600; 
+	font-size: 18px;
+}
+
+.cancel-account {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.every-buttons {
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+}
+ .every-buttons .buttons-links {
+	 font-weight: 600;
+	 font-size: 16px;
+	 color: #fff;
+	 text-decoration: none;
+	 height: 30px;
+	 display: flex;
+	 align-items: center;
+	 justify-content: center;
+	 width: 100%;
+	 background: #000;
+	 cursor: pointer;
+}
+ .every-buttons .buttons-links.add-btn {
+	 margin: 10px 0;
+	 background: #28a745;
+	 border: 1px solid #28a745;
+	 max-width: 140px;
+}
+ .every-buttons .buttons-links.add {
+	 max-width: 180px;
+	 background: #007bff;
+}
+ .every-buttons .buttons-links.view {
+	 background: #6c757d;
+}
+ .every-buttons .buttons-links.edit {
+	 background: #17a2b8;
+}
+ .every-buttons .buttons-links.delete {
+	 background: #dc3545;
+}
+ 
+.table-data {
+	 margin: 0 auto;
+	 width: 100%;
+	 border-collapse: collapse;
+}
+ .table-data .table-row:nth-child(even) {
+	 background: #f2f2f2;
+}
+ .table-data .table-row .table-row-heading {
+	 font-size: 18px;
+	 font-weight: 600;
+	 height: 32px;
+	 font-style: italic;
+}
+ .table-data .table-row .table-row-details {
+	 font-size: 16px;
+	 font-weight: 400;
+	 text-align: center;
+	 height: 32px;
+}
+ 

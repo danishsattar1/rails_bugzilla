@@ -1,0 +1,33 @@
+<%= form_for [project, bug] ,:html => {:multipart => true} do |b| %>
+  <div class="field">
+    <%= b.label :title, class: "form-headings" %> 
+    <%= b.text_field :title %>
+  </div> 
+  <div class="field">
+    <%= b.label :description, class: "form-headings" %> 
+    <%= b.text_area :description %> 
+  </div>
+  <div class="field">
+    <%= b.label :deadline, class: "form-headings" %> 
+    <%= b.date_field :deadline %> 
+  </div>  
+  <div class="field">
+    <%= b.label 'Type', class: "form-headings" %>
+    <%= b.select :bugtype, Bug.bugtypes.keys, prompt: "Select Type"%>
+  </div>
+    
+  <div class="field">
+    <%= b.label 'Assign Developer', class: "form-headings" %>
+    <%= select_tag "bug[developer_id]", options_from_collection_for_select(@developers, "id", :name_with_role), prompt: "Select Developer"%>
+  </div>
+  <div class="field">
+    <%= b.label 'Screenshot', class: "form-headings" %>
+    <%= b.file_field :screenshot %>
+  </div>
+  <div class="every-buttons">
+    <%=  b.submit class: "buttons-links add-btn" %>
+  </div>
+  <div class="extra-buttons">
+    <%= link_to "Back", project_bugs_path(project), class: "extra-links" %>
+  </div>
+<% end %>

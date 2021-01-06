@@ -1,0 +1,31 @@
+<div class="projects">
+  <h1 class="title"><%= @project.title%></h1>
+  <div class="extra-buttons project-show">
+    <%= link_to "See All Projects", projects_path, class: "extra-links" %>
+    <%= link_to "Manage Bugs", project_bugs_path(@project), class: 'extra-links' %>
+  </div>
+  <% if can? :createMember, Project%>
+  <h1 class="main-heading">Add Project Members</h1>
+    <%= form_for @addMember,  url: add_members_project_path do |p| %>
+      <div class="field">
+        <%= select_tag "user_project[user_id]", options_from_collection_for_select(@usersToShow, "id", :name_with_role), prompt: "Select Members"%>
+      </div> 
+      <div class="every-buttons">
+        <%= p.submit "Add", class: "buttons-links add-btn" %>
+      </div>
+    <% end %>
+  <% end %>
+  <h1 class="main-heading">Project Members</h1>
+  <table class="table-data">
+    <tr class="table-row">
+      <th class="table-row-heading">Name</th>
+      <th class="table-row-heading">Type</th>
+    </tr>
+    <% @added_members.each do |member| %>
+    	<tr class="table-row">
+    		<td class="table-row-details"> <%= member.name%> </td>
+    		<td class="table-row-details"> <%= member.usertype%> </td>
+    	</tr>
+    <% end %>
+  </table>
+</div>

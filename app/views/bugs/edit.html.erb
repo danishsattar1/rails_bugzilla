@@ -1,0 +1,9 @@
+<div class="bugs">
+  <% if @bug.errors.any? %>
+    <% @bug.errors.full_messages.each do |error| %>
+      <div class="alert"><%= error %></div>
+    <% end %>
+  <% end %>
+  <h1 class="title">Update Bug</h1>
+  <%= render 'form', project: @project, bug: @bug%>
+</div>

@@ -1,0 +1,56 @@
+.bugs {
+	.table-data {
+		max-width: 1200px;
+		margin-top: 30px;
+	}
+	.form-headings {
+		max-width: 90px;
+	}
+	#bug_deadline {
+		width: 100%;
+		max-width: 176px;
+	}
+	#bug_bugtype,
+	#bug_developer_id,
+	#bug_screenshot {
+		width: 100%;
+		max-width: 181px;
+		height: 24px;
+		background: transparent;
+	}
+
+	.table-data {
+		 max-width: 850px;
+		.table-row {
+			.row-heading {
+				font-weight: 600;
+				font-style: italic;
+			}
+			.table-row-details {
+				
+				.edit_bug {
+					max-width: 140px;
+					margin: 0 auto;
+					.field {
+						margin: 0;
+						#bug_status {
+							background: transparent;
+							width: 100%;
+							margin-top: 10px;
+							height: 30px;
+						}
+					}
+				}
+			}
+		}
+	}
+	img {
+		width: 100%;
+    height: 100%;
+    object-fit: contain;
+    max-width: 350px;
+    margin: 20px auto;
+    display: flex;
+	}
+
+}

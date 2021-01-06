@@ -1,0 +1,16 @@
+<%= form_for(project) do |f| %>
+  <div class="field">
+    <%= f.label :title, class: "form-headings" %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description, class: "form-headings" %>
+    <%= f.text_area :description %>
+  </div> 
+  <div class="every-buttons">
+    <%= f.submit class: "buttons-links add-btn" %>
+  </div>
+<% end %>
+<div class="extra-buttons">
+  <%= link_to "Back", projects_path, class: "extra-links" %>
+</div>
