@@ -20,7 +20,9 @@
 	}
 
 	.table-data {
+		&.show-bug-page {
 		 max-width: 850px;
+		}
 		.table-row {
 			.row-heading {
 				font-weight: 600;
